@@ -1,0 +1,12 @@
+import java.time.LocalDate;
+
+public class program {
+
+	public static void main(String[] args) {
+		
+		LocalDate d01 = LocalDate.now();
+		
+		System.out.println("d01 = " + d01);
+	}
+
+}

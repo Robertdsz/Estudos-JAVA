@@ -1,0 +1,31 @@
+import static org.junit.Assert.fail;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+import util.GerenciamentoDriver;
+
+public class CasoDeTeste1 {
+
+	private WebDriver driver;
+	GerenciamentoDriver gerenciamentoDriver;
+	
+	@Before
+	public void setUp() throws Exception {
+		gerenciamentoDriver = new GerenciamentoDriver();
+		driver 				= gerenciamentoDriver.browser("chrome");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		
+		driver.get("https://www.terra.com.br");
+	}
+
+}
