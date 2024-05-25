@@ -31,4 +31,3 @@ Contribuições são bem-vindas! Se você encontrar erros nos exercícios, quise
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
-# Resumo Aula 01
