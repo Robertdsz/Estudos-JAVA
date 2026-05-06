@@ -1,3 +1,5 @@
+package src;
+
 public class Contato {
     private static int contador = 0;
     private int id;
@@ -10,14 +12,6 @@ public class Contato {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
-    }
-
-    public static int getContador() {
-        return contador;
-    }
-
-    public static void setContador(int contador) {
-        Contato.contador = contador;
     }
 
     public int getId() {

@@ -1,3 +1,4 @@
+package src;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,5 +13,7 @@ public class ContatoService {
         contatos.removeIf(contato -> contato.getId() == id);
     }
 
-
+    public List<Contato> listarContatos() {
+        return contatos;
+    }
 }
