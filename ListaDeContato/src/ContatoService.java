@@ -27,4 +27,12 @@ public class ContatoService {
         }
         return resultado;
     }
+
+    public void atualizarContato( int id, String telefone){
+        for ( Contato contato : contatos ){
+            if (contato.getId() == (id)){
+              contato.setTelefone(telefone);
+            }
+        }
+    }
 }
