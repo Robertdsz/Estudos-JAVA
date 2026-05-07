@@ -16,4 +16,15 @@ public class ContatoService {
     public List<Contato> listarContatos() {
         return contatos;
     }
+
+    public List<Contato> buscarContatos(String nome){
+        List<Contato> resultado = new ArrayList<>();
+
+        for ( Contato contato : contatos ) {
+            if (contato.getNome().contains(nome)) {
+                resultado.add(contato);
+            }
+        }
+        return resultado;
+    }
 }
