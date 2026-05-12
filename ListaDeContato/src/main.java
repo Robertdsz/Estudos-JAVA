@@ -6,7 +6,6 @@ public class main {
     public static void main(String[] args) {
 
         ContatoService service = new ContatoService();
-        List<Contato> lista = service.listarContatos();
 
         Scanner sc = new Scanner(System.in);
         int opcao;
@@ -22,6 +21,7 @@ public class main {
             System.out.println("Escolha: ");
 
             opcao = sc.nextInt();
+            sc.nextLine();
 
             switch (opcao){
                 case 1:
@@ -34,7 +34,23 @@ public class main {
                     service.adicionarContato(new Contato(nome, telefone, email));
                     System.out.println("Contato adicionado com sucesso!");
                     break;
+
+                case 2:
+                    List<Contato> lista = service.listarContatos();
+                    for (Contato contato : lista){
+                        System.out.println(contato.getNome() + " | " + contato.getTelefone() + " | " + contato.getEmail());
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Digite o nome: ");
+                    String nomeContato = sc.nextLine();
+                    List<Contato> resultado = service.buscarContatos(nomeContato);
+                    for (Contato contato : resultado){
+                        System.out.println(contato.getNome() + " | " + contato.getTelefone() + " | " + contato.getEmail());
+                    }
+                    break;
             }
-        }
+        } while(opcao != 0);
     }
 }
