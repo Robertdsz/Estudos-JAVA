@@ -1,4 +1,5 @@
 package src;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -49,6 +50,38 @@ public class main {
                     for (Contato contato : resultado){
                         System.out.println(contato.getNome() + " | " + contato.getTelefone() + " | " + contato.getEmail());
                     }
+                    break;
+
+                case 4:
+                    List<Contato> contatos = service.listarContatos();
+                    if ( contatos.isEmpty() ) {
+                        System.out.println("Nenhum contato cadastrado!");
+                        break;
+                    }
+                    for ( Contato contato : contatos ) {
+                        System.out.printf("ID: " + contato.getId() + " | " + contato.getNome() + "\n");
+                    }
+                    System.out.println("Digite o ID: ");
+                    int id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Digite o novo telefone: ");
+                    String novoTelefone = sc.nextLine();
+                    service.atualizarContato(id, novoTelefone);
+                    break;
+
+                case 5:
+                    List<Contato> contatosRemover = service.listarContatos();
+                    if ( contatosRemover.isEmpty() ) {
+                        System.out.println("Nenhum contato cadastrado!");
+                        break;
+                    }
+                    for ( Contato contato : contatosRemover ) {
+                        System.out.printf("ID: " + contato.getId() + " | " + contato.getNome() + "\n");
+                    }
+                    System.out.println("Digite o ID do contato a remover: ");
+                    int apagarId = sc.nextInt();
+                    sc.nextLine();
+                    service.removerContato(apagarId);
                     break;
             }
         } while(opcao != 0);
